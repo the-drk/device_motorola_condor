@@ -1,6 +1,5 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -32,10 +30,11 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -54,12 +53,12 @@ void vendor_load_properties()
     std::string radio;
     std::string device;
 
-    platform = property_get("ro.board.platform");
+    platform = GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
     property_override("ro.product.model", "Moto E");
-    radio = property_get("ro.boot.radio");
+    radio = GetProperty("ro.boot.radio", "");
     if (radio == "0x1") {
         /* xt1021 */
         property_override("ro.product.device", "condor_umts");
@@ -91,6 +90,5 @@ void vendor_load_properties()
         property_set("ro.telephony.default_network", "0");
         property_set("persist.radio.multisim.config", "");
     }
-    device = property_get("ro.product.device");
-    INFO("Found radio id: %s setting build properties for %s device\n", radio.c_str(), device.c_str());
 }
+
