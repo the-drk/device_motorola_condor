@@ -38,6 +38,13 @@ DEVICE_PACKAGE_OVERLAYS := \
 # Inherit from msm8610-common
 $(call inherit-product, device/motorola/msm8610-common/msm8610.mk)
 
+# Sensors
+PRODUCT_PACKAGES += \
+	sensors.msm8610
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
+
 # Doze
 #PRODUCT_PACKAGES += \
 #    MotoDoze
