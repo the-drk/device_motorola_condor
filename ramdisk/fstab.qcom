@@ -14,4 +14,4 @@
 /dev/block/bootdevice/by-name/misc         /misc        emmc    defaults                                                                       defaults
 
 /devices/msm_sdcc.2/mmc_host*              auto         auto    defaults                                                                       voldmanaged=sdcard1:auto,encryptable=userdata
-/dev/block/zram0                           none         swap    defaults                                                                       zramsize=402653184
+/dev/block/zram0                           none         swap    defaults                                                                       zramsize=402653184,max_comp_streams=-1
