@@ -20,7 +20,7 @@
 LOCAL_PATH := device/motorola/condor
 
 # Kernel
-TARGET_KERNEL_CONFIG := cm_condor_defconfig
+TARGET_KERNEL_CONFIG := lineage_condor_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8610
 
 # Storage & partiiton
