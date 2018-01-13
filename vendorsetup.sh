@@ -1,0 +1,2 @@
+add_lunch_combo gzosp_condor-userdebug
+add_lunch_combo gzosp_condor-eng
