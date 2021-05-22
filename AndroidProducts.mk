@@ -15,4 +15,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_condor.mk
+    $(LOCAL_DIR)/lineage_condor.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_condor-userdebug \
+    lineage_condor-eng

@@ -1,0 +1,13 @@
+cc_library_static {
+    name: "libinit_condor",
+    recovery_available: true,
+
+    include_dirs: ["system/core/init"],
+    cppflags: [
+        "-Wall",
+        "-DANDROID_TARGET=\"condor\"",
+    ],
+
+    srcs: ["init_condor.cpp"],
+    static_libs: ["libbase"],
+}
