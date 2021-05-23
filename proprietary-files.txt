@@ -9,7 +9,6 @@ etc/acdbdata/Speaker_cal.acdb
 etc/firmware/synaptics-s2316i-13101703-175833-condor.tdat
 etc/firmware/synaptics-s2316t-13101703-175833-condor.tdat
 lib/hw/camera.vendor.msm8610.so
-lib/hw/sensors.msm8610.so
 lib/libchromatix_ar0543_common.so
 lib/libchromatix_ar0543_default_video.so
 lib/libchromatix_ar0543_preview.so
@@ -29,5 +28,6 @@ vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/liboemcamera.so
+vendor/lib/sensors.vendor.msm8610.so
 vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
 vendor/lib/rfsa/adsp/libadsp_jpege_skel.so
